@@ -48,6 +48,7 @@ struct LandingView: View {
                     
                     Button("ADD"){
                         createToDo(withTitle: newItemDescription)
+                        newItemDescription = "" //Clears text field after pressing button
                     } .font(.caption)
                         .disabled(newItemDescription.isEmpty == true)
                 }
