@@ -25,26 +25,17 @@ struct LandingView: View {
             
             VStack {
                 List{
-                    Label(
-                        title:  {
-                            Text("Study for Chemistry Quiz")
-                        },icon: {
-                            Image(systemName: "circle")
-                        }
-                        )
-                    Label(
-                        title:  {
-                            Text("Finish Computer Science Assignment")
-                        },icon: {
-                            Image(systemName: "circle")
-                        }
+                    ItemView(
+                        title:"Study for Chemistry Quiz",
+                        done: false
                     )
-                    Label(
-                        title:  {
-                            Text("Go for a run around campus")
-                        },icon: {
-                            Image(systemName: "circle")
-                        }
+                    ItemView(
+                        title: "Finish Computer Science Assignment",
+                        done:true
+                    )
+                    ItemView(
+                        title: "Go for a run around campus",
+                        done:false
                     )
    
    
@@ -72,3 +63,5 @@ struct LandingView: View {
 #Preview {
     LandingView()
 }
+
+

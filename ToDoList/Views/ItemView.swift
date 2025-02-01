@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ItemView: View {
+    let title: String
+    let done: Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Label(
+            title:  {
+                Text(title)
+            },icon: {
+                if done == true {
+                Image(systemName: "checkmark.circle")
+                } else {
+                    Image(systemName: "circle")
+                }
+                
+            }
+        )
     }
 }
-
 #Preview {
-    ItemView()
+    ItemView(title: "Test", done:true)
 }
