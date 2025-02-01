@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ItemView: View {
-    let title: String
-    let done: Bool
+    
+    let currentItem: ToDoItem
+
+    
     var body: some View {
         Label(
             title:  {
-                Text(title)
+                Text(currentItem.title)
             },icon: {
-                if done == true {
+                if currentItem.done == true {
                 Image(systemName: "checkmark.circle")
                 } else {
                     Image(systemName: "circle")
@@ -26,5 +28,5 @@ struct ItemView: View {
     }
 }
 #Preview {
-    ItemView(title: "Test", done:true)
+    ItemView(currentItem: exampleItems[1])
 }
