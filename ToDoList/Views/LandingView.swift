@@ -25,9 +25,30 @@ struct LandingView: View {
             
             VStack {
                 List{
-                    Text("Study for Chemistry Quiz")
-                    Text("Finish Computer Science Assignment")
-                    Text("Go for a run around campus")
+                    Label(
+                        title:  {
+                            Text("Study for Chemistry Quiz")
+                        },icon: {
+                            Image(systemName: "circle")
+                        }
+                        )
+                    Label(
+                        title:  {
+                            Text("Finish Computer Science Assignment")
+                        },icon: {
+                            Image(systemName: "circle")
+                        }
+                    )
+                    Label(
+                        title:  {
+                            Text("Go for a run around campus")
+                        },icon: {
+                            Image(systemName: "circle")
+                        }
+                    )
+   
+   
+
                 }
                     .searchable(text:$searchText)
                 HStack{
@@ -44,7 +65,7 @@ struct LandingView: View {
             .navigationTitle("To do")
         }
    
-        .padding()
+  
     }
 }
 
