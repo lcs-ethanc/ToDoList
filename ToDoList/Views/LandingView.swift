@@ -38,8 +38,9 @@ struct LandingView: View {
                     Spacer()
                     
                     Button("ADD"){
-                        
+                        createToDo(withTitle: newItemDescription)
                     } .font(.caption)
+                        .disabled(newItemDescription.isEmpty == true)
                 }
                     .padding(20)
             }
@@ -47,6 +48,19 @@ struct LandingView: View {
         }
    
   
+    }
+    
+    //MARK: Functions
+    func createToDo(withTitle title: String) {
+        
+        //Create the new to-do item instance
+        let todo = ToDoItem(
+            title: title,
+            done: false
+        )
+        
+        //Append to the array
+        todos.append(todo)
     }
 }
 
