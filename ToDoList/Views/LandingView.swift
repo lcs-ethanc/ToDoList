@@ -19,9 +19,10 @@ struct LandingView: View {
     @State var searchText: String = ""
     
     //Access model context (for addition, deletions, etc.)
+    @Environment(\.modelContext) var modelContext
     
     //The list of to-do items
-    @State var todos: [ToDoItem] = exampleItems
+    @Query var todos: [ToDoItem]
     
     //MARK: Computed Properties
     
@@ -30,21 +31,15 @@ struct LandingView: View {
         NavigationStack{
             
             VStack {
-                List ($todos){ $todo in
-                    ItemView(currentItem: $todo)
-                    //Delete a to-do item
-                        .swipeActions {
-                            Button(
-                                "Delete",
-                                role: .destructive,
-                                action: {
-                                    deleteItem(todo)
-                                }
-                            )
-                        }
-                    
+                List {
+                    ForEach(todos) { todo in
+                        
+                        ItemView(currentItem: todo)
+                 
+                    }
+                    .onDelete(perform: removeRows)
                 }
-                    .searchable(text:$searchText)
+                .searchable(text: $searchText)
                 
                 HStack{
                     TextField("Enter a to-do item", text:$newItemDescription)
@@ -73,20 +68,21 @@ struct LandingView: View {
             done: false
         )
         
-        //Append to the array
-        todos.append(todo)
+        // Use the model context to insert the new to-do
+        modelContext.insert(todo)
     }
     
-    func deleteItem(_ todo: ToDoItem){
+    func removeRows(at offsets: IndexSet) {
         
-        //Remove the provided to-do item from the array
-        //Remove all todos items with id matching given todo id
-        todos.removeAll{ currentItem in
-            currentItem.id == todo.id
-            
+        // Accept the offset within the list
+        // (the position of the item being deleted)
+        //
+        // Then ask the model context to delete this
+        // for us, from the 'todos' array
+        for offset in offsets {
+            modelContext.delete(todos[offset])
         }
-    }
-}
+    }}
 
 //#Preview {
 //    LandingView()
