@@ -22,7 +22,7 @@ struct LandingView: View {
     @Environment(\.modelContext) var modelContext
     
     //The list of to-do items
-    @Query var todos: [ToDoItem]
+    @Query var todos: [TodoItem]
     
     //MARK: Computed Properties
     
@@ -67,7 +67,7 @@ struct LandingView: View {
     func createToDo(withTitle title: String) {
         
         //Create the new to-do item instance
-        let todo = ToDoItem(
+        let todo = TodoItem(
             title: title,
             done: false
         )
@@ -88,8 +88,9 @@ struct LandingView: View {
         }
     }}
 
-//#Preview {
-//    LandingView()
-//}
+#Preview {
+    LandingView()
+        .modelContainer(TodoItem.preview)
+}
 //
 

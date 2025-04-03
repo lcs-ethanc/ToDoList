@@ -12,7 +12,7 @@
 		44117D0C2D49487900695219 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44117D042D49487900695219 /* Preview Assets.xcassets */; };
 		44117D0D2D49487900695219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44117D062D49487900695219 /* Assets.xcassets */; };
 		44117D122D4948BF00695219 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44117D112D4948BF00695219 /* ItemView.swift */; };
-		44117D142D4EB50C00695219 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44117D132D4EB50B00695219 /* ToDoItem.swift */; };
+		44117D142D4EB50C00695219 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44117D132D4EB50B00695219 /* TodoItem.swift */; };
 		44117D162D4ECC9200695219 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44117D152D4ECC9200695219 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +23,7 @@
 		44117D072D49487900695219 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		44117D082D49487900695219 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		44117D112D4948BF00695219 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
-		44117D132D4EB50B00695219 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		44117D132D4EB50B00695219 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		44117D152D4ECC9200695219 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = /Users/ec/Desktop/Functions.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 		44117D0F2D49488100695219 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				44117D132D4EB50B00695219 /* ToDoItem.swift */,
+				44117D132D4EB50B00695219 /* TodoItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 			files = (
 				44117D0A2D49487900695219 /* LandingView.swift in Sources */,
 				44117D122D4948BF00695219 /* ItemView.swift in Sources */,
-				44117D142D4EB50C00695219 /* ToDoItem.swift in Sources */,
+				44117D142D4EB50C00695219 /* TodoItem.swift in Sources */,
 				44117D162D4ECC9200695219 /* Functions.swift in Sources */,
 				44117D0B2D49487900695219 /* ToDoListApp.swift in Sources */,
 			);
